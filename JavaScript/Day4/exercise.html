@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DOM</title>
+		<style>
+			.mydiv{
+				height:200px;
+				width:200px;
+				
+				margin:auto;
+				}
+			.excellent{
+				box-shadow:0 0 10px 10px green;
+				background-color:green;
+				}
+			.failure{
+				box-shadow:0 0 10px 10px red;
+				background-color:red;
+				}
+			.pass{
+				box-shadow:0 0 10px 10px yellow;
+				background-color:yellow;
+				}
+			
+			
+			
+		</style>
+	</head>
+
+	<body>
+
+		<div class="mydiv">
+			<h3 class="h"></h3>
+			<h3 class="h"></h3>
+			<h3 class="h"></h3>
+		</div>
+
+		
+	<script>
+		let name=prompt("enter name of student");
+		let marks=prompt("enter marks");
+
+		let box=document.getElementsByClassName("mydiv");
+		let heading=document.getElementsByClassName("h");
+
+
+		heading[0].textContent=`Name : ${name}`
+
+		heading[1].textContent=`Marks : ${marks}`
+
+		box=box[0];
+
+		if(marks>=70)
+		{
+			box.classList.add("excellent");
+			heading[2].textContent=`status : excellent`
+			
+		}
+		else if(marks>=50 && marks<70)
+		{
+			box.classList.add("pass");
+			heading[2].textContent=`status : pass`
+		}
+
+		else
+		{
+			box.classList.add("failure");
+			heading[2].textContent=`status : fail`
+		}
+
+
+	</script>
+	</body>
+</html>

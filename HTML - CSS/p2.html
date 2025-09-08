@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 0 60px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: bold;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .nav-pills {
+            display: inline-flex;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-pills a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 40px;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-pills a:hover,
+        .nav-pills a.active {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .about-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 50px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .card-image {
+            height: 220px;
+            background: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            opacity: 0.7;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-desc {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.02);
+        }
+
+        .skill-icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1em;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .submit-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .nav-pills {
+                flex-direction: column;
+                width: fit-content;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-card {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Bitra</div>
+            <h1>Bitra Pavan Kumar</h1>
+            <p class="tagline">Creative Artist & Digital Storyteller</p>
+        </header>
+
+        <nav>
+            <div class="nav-pills">
+                <a href="#about" class="active">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-card">
+                <p>I'm a passionate creative professional with a love for bold design and innovative digital experiences. My work combines traditional artistic principles with cutting-edge technology to create memorable brand experiences.</p>
+                <br>
+                <p>With 8 years in the creative industry, I've worked with startups, established brands, and everything in between. I believe in the power of visual storytelling to connect people and create meaningful experiences.</p>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <div class="card-overlay">🎨</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Brand Experience - Startup</h3>
+                        <p class="card-desc">Complete brand overhaul including logo design, color palette, and marketing materials for a tech startup.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <div class="card-overlay">📱</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Mobile App Design</h3>
+                        <p class="card-desc">User interface and experience design for a social networking mobile application with 50k+ users.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <div class="card-overlay">🌐</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">E-commerce Platform</h3>
+                        <p class="card-desc">Full website design and development for luxury fashion brand with integrated shopping experience.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <div class="card-overlay">🎬</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Motion Graphics</h3>
+                        <p class="card-desc">Animated promotional video and motion graphics for international music festival campaign.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Visual Design</h3>
+                    <p>Adobe Creative Suite, Figma, Sketch</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript, React</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📱</div>
+                    <h3>UI/UX Design</h3>
+                    <p>User Research, Prototyping, Testing</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🎬</div>
+                    <h3>Motion Design</h3>
+                    <p>After Effects, Premiere Pro, Cinema 4D</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="5" placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Jordan Davis. Designed with passion.</p>
+        </footer>
+    </div>
+</body>
+</html>

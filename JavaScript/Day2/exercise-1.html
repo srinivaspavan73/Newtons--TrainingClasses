@@ -1,0 +1,13 @@
+<script>
+const prices = [500, 1200, 800, 1500, 2000, 300, 1100];
+console.log("Prices: ",prices);
+
+const filteredPrices = prices.filter(price => price > 1000);
+console.log("Filtered Prices (>1000):", filteredPrices);
+
+const discountedPrices = filteredPrices.map(price => price * 0.9);
+console.log("Discounted Prices (10% off):", discountedPrices);
+
+const total = discountedPrices.reduce((acc, price) => acc + price, 0);
+console.log("Total of Discounted Prices:", total.toFixed(2));
+</script>

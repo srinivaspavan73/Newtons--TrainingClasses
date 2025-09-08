@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Audio · Image · Video — Simple Demo</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }
+    h1 { font-size: 1.4rem; margin-bottom: 0.2rem; }
+    section { margin: 20px 0; padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+    img { max-width: 100%; height: auto; display: block; margin-top: 8px; border-radius: 6px; }
+    video { max-width: 100%; display: block; margin-top: 8px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+
+  <h1>Simple HTML: Audio, Image, Video</h1>
+
+  <!-- AUDIO -->
+  <section>
+    <strong>Audio</strong>
+    <p>Plays an audio file with built-in controls.</p>
+    <!-- Replace "audio-file.mp3" with your file path or URL -->
+    <audio controls>
+      <source src="Perfect.mp3" type="audio/mpeg">
+      <!-- <source src="audio-file.ogg" type="audio/ogg"> -->
+      Your browser doesn't support the audio element.
+    </audio>
+  </section>
+
+  <!-- IMAGE -->
+  <section>
+    <strong>Image</strong>
+    <p>A simple image with alt text for accessibility.</p>
+    <!-- Replace "image-file.jpg" with your file path or URL -->
+    <img src="Passport_img.png" alt="Description of the image">
+  </section>
+
+  <!-- VIDEO -->
+  <section>
+    <strong>Video</strong>
+    <p>Plays a video with controls (and fallback text).</p>
+    <!-- Replace "video-file.mp4" with your file path or URL -->
+    <video controls width="640">
+      <source src="Ed Sheeran - Perfect (Official Music Video).mp4" type="video/mp4">
+      <source src="video-file.webm" type="video/webm">
+      Your browser doesn't support the video element.
+    </video>
+  </section>
+
+  <footer style="font-size:0.9rem; color:#555; margin-top:16px;">
+    Tip: If you're testing quickly, you can use local files (same folder as this HTML) or paste full URLs to hosted media.
+  </footer>
+
+</body>
+</html>

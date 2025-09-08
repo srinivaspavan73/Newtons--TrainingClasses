@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Position Property Example</title>
+  <style>
+    .box {
+      width: 150px;
+      height: 100px;
+      color: white;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* .static-box {
+      position: static;
+      background-color: steelblue;
+    } */
+
+    .relative-box {
+      position: relative;
+      top: 20px;
+      left: 20px;
+      background-color: darkorange;
+    }
+
+    .absolute-container {
+      position: relative;
+      height: 150px;
+      background-color: #f0f0f0;
+      margin-bottom: 30px;
+    }
+
+    .absolute-box {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: crimson;
+    }
+
+    .fixed-box {
+      position: fixed;
+      bottom: 200px;
+      right: 10px;
+      height: 40px;
+      width: 590px;
+      background-color: darkgreen;
+    }
+
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      background-color: purple;
+      padding: 15px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .content {
+      height: 1200px;
+      background: linear-gradient(white, #ccc);
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- <h2>Position: static (default)</h2>
+  <div class="box static-box">Static Position</div> -->
+
+  <h2>Position: relative</h2>
+  <div class="box relative-box">Relative Position (moved 20px)</div>
+
+  <h2>Position: absolute (inside relative container)</h2>
+  <div class="absolute-container">
+    <div class="box absolute-box">Absolute Position</div>
+  </div>
+
+  <!-- <h2>Position: fixed (always at bottom right)</h2>
+  <div class="box fixed-box">Fixed Position</div> -->
+
+  <!-- <h2>Position: sticky (sticks to top)</h2> 
+  <div class="sticky-header">Sticky Header</div>
+  <div class="content">
+    Scroll down to see sticky in action. The sticky header stays at the top of the page once it reaches it.
+  </div> -->
+
+</body>
+</html>

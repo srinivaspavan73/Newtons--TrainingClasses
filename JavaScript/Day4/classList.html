@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>classList Demo for Students</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 100px;
+      border: 2px solid black;
+      margin: 20px;
+      text-align: center;
+      line-height: 100px;
+      font-weight: bold;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+
+    .rounded {
+      border-radius: 15px;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .shadow {
+      box-shadow: 2px 2px 10px red;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="myBox" class="box">Class Box</div>
+
+
+  <script>
+       console.log(document);
+      console.dir(document);
+
+    // console.log(document.title);
+    const box = document.getElementById("myBox");
+    // console.log(box);
+    // Class listtttttttttttttt
+
+    // console.log(box.classList)
+   
+    // const boxx = document.getElementsByClassName("box");
+    // console.log(boxx.length);
+
+
+    // Add a class
+    // box.classList.add("highlight");
+    // console.log("Added 'highlight'");
+
+    // Add multiple classes
+    box.classList.add("rounded", "shadow");
+    console.log("Added 'rounded' and 'shadow'");
+ 
+
+    // Check if it contains a class
+    // if (box.classList.contains("red")) {
+    //   console.log("Box has 'red'");
+    // } else {
+    //   console.log("Box does NOT have 'red'");
+    // }
+
+    // Toggle a class
+    box.classList.toggle("red");
+    console.log("Toggled 'red' class");
+
+    // Remove a class
+    box.classList.remove("shadow");
+    console.log("Removed 'shadow'");
+
+    // Replace a class
+    box.classList.replace("pavan", "highlight");
+    console.log("Replaced 'rounded' with 'highlight'");
+
+
+  </script>
+
+</body>
+</html>

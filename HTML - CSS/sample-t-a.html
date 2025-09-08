@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Transitions & Animations Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .example-section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .section-title {
+      margin-top: 0;
+      color: #333;
+    }
+
+    /* Example 1: Button Hover Transition */
+    .hover-button {
+      padding: 15px 30px;
+      background-color: #3498db;
+      border: none;
+      color: white;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .hover-button:hover {
+      background-color: #2ecc71;
+      transform: scale(1.1);
+    }
+
+    /* Example 2: Fading Text Animation */
+    .fading-text {
+      font-size: 28px;
+      text-align: center;
+      margin: 20px 0;
+      animation: fadeInOut 3s infinite;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    /* Example 3: Slide-In Card */
+    .card {
+      background: #ffffff;
+      padding: 40px;
+      font-size: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Transitions & Animations</h1>
+
+  <!-- Example 1 -->
+  <div class="example-section">
+    <h2 class="section-title">Example 1: Button Hover Transition</h2>
+    <button class="hover-button">Hover Me</button>
+  </div>
+
+  <!-- Example 2 -->
+  <div class="example-section">
+    <h2 class="section-title">Example 2: Fading Text Animation</h2>
+    <div class="fading-text">Welcome to the Animation World!</div>
+  </div>
+
+  <!-- Example 3 -->
+  <div class="example-section">
+    <h2 class="section-title">Example 3: Slide-In Card on Hover</h2>
+    <div class="card">Hover Over Me!</div>
+  </div>
+
+</body>
+</html>

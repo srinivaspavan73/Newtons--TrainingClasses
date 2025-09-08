@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox and Grid Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+
+    /* Flexbox examples */
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      background-color: #e0f7fa;
+      padding: 10px;
+      gap: 10px;
+      /* flex-direction: column; */
+    }
+
+    .flex-item {
+      background-color: #00796b;
+      color: white;
+      padding: 20px;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 150px;
+
+      /* flex: 1 1 150px; */
+      text-align: center;
+      flex-direction: column;
+    }
+        h1 {
+      background-color: #00796b;
+      color: white;
+      padding: 20px;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 150px;
+
+      /* flex: 1 1 150px; */
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .flex-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    /* Grid examples */
+    .grid-container > div:hover {
+      display: grid;
+      grid-template-columns: 100px 200px 400px;
+      grid-template-rows: 100px 300px 200px;
+      /* grid-template-columns: repeat(2, 2fr); */
+      /* grid-template-rows: auto auto ; */
+      gap: 10px;
+      background-color: #fce4ec;
+      padding: 10px;
+    }
+
+    .grid-item {
+      background-color: #c2185b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .grid-area-container {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      grid-template-columns: 1fr 2fr;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .grid-area-container > div {
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header {
+      grid-area: header;
+      background-color: #3f51b5;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background-color: #ff9800;
+    }
+
+    .main {
+      grid-area: main;
+      background-color: #4caf50;
+    }
+
+    .footer {
+      grid-area: footer;
+      background-color: #9c27b0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Flexbox Section -->
+  <h2>Flexbox Example (Row, Wrap, Grow)</h2>
+  <div class="flex-container">
+    <!-- <h1>hai</h1><h1>hai</h1><h1>hai</h1><h1>hai</h1><h1>hai</h1><h1>hai</h1><h1>hai</h1><h1>hai</h1><h1>hai</h1><h1>hai</h1> -->
+    <div class="flex-item">Flex Item 1</div>
+    <div class="flex-item">Flex Item 2</div>
+    <div class="flex-item">Flex Item 3</div>
+    <div class="flex-item">Flex Item 4</div>
+    <div class="flex-item">Flex Item 5</div>
+    <div class="flex-item">Flex Item 6</div>
+    <div class="flex-item">Flex Item 7</div>
+    <div class="flex-item">Flex Item 8</div>
+  </div>
+
+  <h2>Flexbox Column Example</h2>
+  <div class="flex-column">
+    <div class="flex-item">Column Item 1</div>
+    <div class="flex-item">Column Item 2</div>
+    <div class="flex-item">Column Item 3</div>
+  </div>
+
+  <!-- Grid Section -->
+  <h2>Grid Example (3 Columns)</h2>
+  <div class="grid-container">
+    <div class="grid-item">Grid 1</div>
+    <div class="grid-item">Grid 2</div>
+    <div class="grid-item">Grid 3</div>
+    <div class="grid-item">Grid 4</div>
+    <div class="grid-item">Grid 5</div>
+    <div class="grid-item">Grid 6</div>
+  </div>
+
+  <h2>Grid Template Areas</h2>
+  <div class="grid-area-container">
+    <div class="header">Header</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="main">Main Content</div>
+    <div class="footer">Footer</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Manipulation Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    #changeTextBtn {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- <h1>DOM Manipulation Example</h1> -->
+  <p id="myParagraph">Before Manipulation.</p>
+  <button id="changeTextBtn">Manipulation</button>
+
+  <script>
+    // Get the button and paragraph elements
+    const button = document.getElementById("changeTextBtn");
+    const paragraph = document.getElementById("myParagraph");
+
+    // Add a click event listener to the button
+    button.addEventListener("click", function() {
+      // Change the text of the paragraph
+      paragraph.textContent = "After Manipulation.";
+    });
+// const myusername = document.getElementById("username");
+//     myusername.addEventListener("input", function(event) {
+//       console.log("User input: ", event.target.value);
+//     });
+    
+//     console.log(myusername);
+
+   
+  </script>
+<!-- <input id="username" type="text" placeholder="Enter something..."> -->
+
+</body>
+</html>

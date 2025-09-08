@@ -1,0 +1,62 @@
+html code:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Event Countdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>My Event Countdown</h1>
+        </header>
+        
+        <div class="form-container">
+            <h2>Add a New Event</h2>
+            <form id="event-form">
+                <div class="form-group">
+                    <label for="event-title">Event Title <span class="required">*</span></label>
+                    <input type="text" id="event-title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-description">Event Description</label>
+                    <textarea id="event-description"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-datetime">Event Date & Time <span class="required">*</span></label>
+                    <input type="datetime-local" id="event-datetime" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="event-category">Event Category</label>
+                    <select id="event-category">
+                        <option value="Birthday">Birthday</option>
+                        <option value="Meeting">Meeting</option>
+                        <option value="Holiday">Holiday</option>
+                        <option value="Custom">Custom</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-email">Email for Reminder</label>
+                    <input type="email" id="event-email">
+                </div>
+                
+                <button type="submit">Add Event</button>
+            </form>
+        </div>
+        
+        <div class="events-list-container">
+            <h2>Upcoming Events</h2>
+            <div id="events-list">
+                </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete CSS Box Model Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+
+    h1 { margin-bottom: 20px; color: #111; }
+    h2 { margin-top: 40px; color: #333; }
+
+    /* General box style */
+    .demo-box {
+      background-color: rgb(15, 223, 25);  /* content area */
+      border: 4px solid rgb(10, 10, 10);         /* border */
+      padding: 100px;                  /* padding */
+      margin: 20px;                   /* margin */
+      width: 200px;                   /* base width */
+    }
+
+    /* Box-sizing differences */
+    .content-box { box-sizing: content-box; }  /* default */
+    .border-box { box-sizing: border-box; }
+
+    /* Container bg to visualize margins */
+.container {
+  background: #eee;
+  padding: 10px;
+  outline: 1px dashed #999;
+}
+
+
+    /* Box with min/max constraints */
+    .resizable-box {
+      width: 50%;           /* relative width */
+      min-width: 200px;     /* cannot shrink below 200px */
+      max-width: 400px;     /* cannot grow beyond 400px */
+      min-height: 100px;    /* min height */
+      max-height: 200px;    /* max height */
+      overflow: auto;       /* scrollbar if content exceeds */
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Box Model Demo</h1>
+
+  <!-- 1. Basic box -->
+  <h2>1. Basic Box</h2>
+  <div class="container">
+    <div class="demo-box content-box">
+      Content + Padding + Border + Margin
+    </div>
+  </div>
+
+  <!-- 2. content-box sizing -->
+  <h2>2. Box-Sizing: Content-Box</h2>
+  <p>Padding and border are added outside the width.</p>
+  <div class="container">
+    <div class="demo-box content-box">
+      Uses content-box model.
+    </div>
+  </div>
+
+  <!-- 3. border-box sizing -->
+  <h2>3. Box-Sizing: Border-Box</h2>
+  <p>Total width includes padding and border.</p>
+  <div class="container">
+    <div class="demo-box border-box">
+      Uses border-box model.
+    </div>
+  </div>
+
+  <!-- 4. Background behavior -->
+  <h2>4. Background</h2>
+  <p>Background fills content + padding (not margin).</p>
+  <div class="container">
+    <div class="demo-box content-box" style="background: lightgreen;">
+      Background visible inside the box.
+    </div>
+  </div>
+
+  <!-- 5. Min/Max width and height -->
+  <h2>5. Min/Max Size</h2>
+  <p>Resize window to see width/height limits.</p>
+  <div class="container">
+    <div class="demo-box resizable-box">
+      This box has size limits.<br><br>
+      Extra content will scroll:
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+         Pellentesque habitant morbi tristique senectus et netus 
+         et malesuada fames ac turpis egestas.</p>
+    </div>
+  </div>
+</body>
+
+</html>

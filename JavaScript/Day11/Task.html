@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-container h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .preview-btn {
+            background: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .profile-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: fadeInScale 0.6s ease-out;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-card.dark {
+            background: #2c3e50;
+            color: white;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 4px solid #667eea;
+        }
+
+        .profile-image.square {
+            border-radius: 10px;
+        }
+
+        .profile-image.rounded {
+            border-radius: 25px;
+        }
+
+        .profile-image.circle {
+            border-radius: 50%;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .profile-card.dark .profile-name {
+            color: white;
+        }
+
+        .profile-bio {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .profile-card.dark .profile-bio {
+            color: #bdc3c7;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .card-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .theme-btn {
+            background: #f39c12;
+            color: white;
+        }
+
+        .theme-btn:hover {
+            background: #d68910;
+        }
+
+        .edit-btn {
+            background: #3498db;
+            color: white;
+        }
+
+        .edit-btn:hover {
+            background: #2980b9;
+        }
+
+        .delete-btn {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .preview-container {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px dashed #667eea;
+            border-radius: 10px;
+            background: #f8f9fa;
+            display: none;
+        }
+
+        .preview-container.show {
+            display: block;
+            animation: fadeInScale 0.3s ease-out;
+        }
+
+        .preview-title {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .card-actions {
+                flex-direction: column;
+            }
+
+            .card-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Profile Card Generator</h1>
+            <form id="profileForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio" name="bio" placeholder="Tell us about yourself..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Profile Picture:</label>
+                    <input type="file" id="image" name="image" accept="image/*" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="borderStyle">Border Style:</label>
+                    <select id="borderStyle" name="borderStyle" required>
+                        <option value="square">Square</option>
+                        <option value="rounded">Rounded</option>
+                        <option value="circle">Circle</option>
+                    </select>
+                </div>
+
+                <button type="button" class="btn preview-btn" onclick="previewCard()">Preview Card</button>
+                <button type="submit" class="btn">Generate Card</button>
+            </form>
+
+            <div class="preview-container" id="previewContainer">
+                <div class="preview-title">Card Preview</div>
+                <div id="previewCard"></div>
+            </div>
+        </div>
+
+        <div class="cards-container" id="cardsContainer">
+            <!-- Generated cards will appear here -->
+        </div>
+    </div>
+
+    <script>
+        // Array to store all profile cards
+        let profileCards = [];
+        let editingCardId = null;
+
+        // Load saved cards when page loads
+        window.onload = function() {
+            loadCardsFromStorage();
+            renderAllCards();
+        };
+
+        // Handle form submission
+        document.getElementById('profileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const bio = document.getElementById('bio').value;
+            const imageFile = document.getElementById('image').files[0];
+            const borderStyle = document.getElementById('borderStyle').value;
+
+            if (!imageFile) {
+                alert('Please select a profile picture');
+                return;
+            }
+
+            // Read the image file
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageData = e.target.result;
+                
+                if (editingCardId !== null) {
+                    // Update existing card
+                    updateCard(editingCardId, name, bio, imageData, borderStyle);
+                } else {
+                    // Create new card
+                    createCard(name, bio, imageData, borderStyle);
+                }
+                
+                // Clear form
+                document.getElementById('profileForm').reset();
+                document.getElementById('previewContainer').classList.remove('show');
+                editingCardId = null;
+            };
+            reader.readAsDataURL(imageFile);
+        });
+
+        // Create a new profile card
+        function createCard(name, bio, imageData, borderStyle) {
+            const card = {
+                id: Date.now(), // Simple ID generation
+                name: name,
+                bio: bio,
+                image: imageData,
+                borderStyle: borderStyle,
+                theme: 'light' // Default theme
+            };
+
+            profileCards.push(card);
+            saveCardsToStorage();
+            renderAllCards();
+        }
+
+        // Update existing card
+        function updateCard(id, name, bio, imageData, borderStyle) {
+            const cardIndex = profileCards.findIndex(card => card.id === id);
+            if (cardIndex !== -1) {
+                profileCards[cardIndex].name = name;
+                profileCards[cardIndex].bio = bio;
+                profileCards[cardIndex].image = imageData;
+                profileCards[cardIndex].borderStyle = borderStyle;
+                saveCardsToStorage();
+                renderAllCards();
+            }
+        }
+
+        // Preview card function
+        function previewCard() {
+            const name = document.getElementById('name').value;
+            const bio = document.getElementById('bio').value;
+            const imageFile = document.getElementById('image').files[0];
+            const borderStyle = document.getElementById('borderStyle').value;
+
+            if (!name || !bio || !imageFile) {
+                alert('Please fill all fields to preview');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageData = e.target.result;
+                const previewContainer = document.getElementById('previewContainer');
+                const previewCard = document.getElementById('previewCard');
+
+                previewCard.innerHTML = generateCardHTML({
+                    id: 'preview',
+                    name: name,
+                    bio: bio,
+                    image: imageData,
+                    borderStyle: borderStyle,
+                    theme: 'light'
+                }, true);
+
+                previewContainer.classList.add('show');
+            };
+            reader.readAsDataURL(imageFile);
+        }
+
+        // Generate HTML for a single card
+        function generateCardHTML(card, isPreview = false) {
+            const themeClass = card.theme === 'dark' ? 'dark' : '';
+            const actionsHTML = isPreview ? '' : `
+                <div class="card-actions">
+                    <button class="card-btn theme-btn" onclick="toggleTheme(${card.id})">Toggle Theme</button>
+                    <button class="card-btn edit-btn" onclick="editCard(${card.id})">Edit</button>
+                    <button class="card-btn delete-btn" onclick="deleteCard(${card.id})">Delete</button>
+                </div>
+            `;
+
+            return `
+                <div class="profile-card ${themeClass}">
+                    <div class="profile-image ${card.borderStyle}">
+                        <img src="${card.image}" alt="${card.name}">
+                    </div>
+                    <div class="profile-name">${card.name}</div>
+                    <div class="profile-bio">${card.bio}</div>
+                    ${actionsHTML}
+                </div>
+            `;
+        }
+
+        // Render all cards
+        function renderAllCards() {
+            const container = document.getElementById('cardsContainer');
+            container.innerHTML = '';
+
+            profileCards.forEach(card => {
+                const cardDiv = document.createElement('div');
+                cardDiv.innerHTML = generateCardHTML(card);
+                container.appendChild(cardDiv.firstElementChild);
+            });
+        }
+
+        // Toggle theme for a specific card
+        function toggleTheme(cardId) {
+            const card = profileCards.find(c => c.id === cardId);
+            if (card) {
+                card.theme = card.theme === 'light' ? 'dark' : 'light';
+                saveCardsToStorage();
+                renderAllCards();
+            }
+        }
+
+        // Edit a card
+        function editCard(cardId) {
+            const card = profileCards.find(c => c.id === cardId);
+            if (card) {
+                document.getElementById('name').value = card.name;
+                document.getElementById('bio').value = card.bio;
+                document.getElementById('borderStyle').value = card.borderStyle;
+                editingCardId = cardId;
+                
+                // Scroll to form
+                document.getElementById('profileForm').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Delete a card
+        function deleteCard(cardId) {
+            if (confirm('Are you sure you want to delete this card?')) {
+                profileCards = profileCards.filter(card => card.id !== cardId);
+                saveCardsToStorage();
+                renderAllCards();
+            }
+        }
+
+        // Save cards to localStorage
+        function saveCardsToStorage() {
+            // Note: In Claude.ai artifacts, localStorage is not available
+            // This is a placeholder for when the code is used in a real browser
+            try {
+                localStorage.setItem('profileCards', JSON.stringify(profileCards));
+            } catch (error) {
+                console.log('localStorage not available in this environment');
+            }
+        }
+
+        // Load cards from localStorage
+        function loadCardsFromStorage() {
+            try {
+                const savedCards = localStorage.getItem('profileCards');
+                if (savedCards) {
+                    profileCards = JSON.parse(savedCards);
+                }
+            } catch (error) {
+                console.log('localStorage not available in this environment');
+                profileCards = [];
+            }
+        }
+    </script>
+</body>
+</html>

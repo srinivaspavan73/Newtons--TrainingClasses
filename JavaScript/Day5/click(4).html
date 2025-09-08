@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Event</title>
+</head>
+<body>
+    <button id="btn">Click Me</button>
+    <h1>Click Event Example</h1>
+
+    <!-- // Adding Mouse Event//Hover Event -->
+    <div id="para">
+        <p>Thank You, Hope we guys had a great time together.
+            All the Best for your future endeavors.
+            Keep Learning, Keep Growing.
+        </p>
+    </div>
+    <!-- // Adding Mouse Event//Hover Event -->
+</body>
+<script>
+    let btn = document.getElementById('btn');
+
+    function btn_click(){
+        document.body.style.backgroundColor = 'blue';
+        document.body.style.color = 'white';
+        console.log('Button submitted');
+    }
+    btn.addEventListener('click',btn_click);
+    // Saying button what to do
+
+
+    // Way2
+    // btn.addEventListener('click',()=>{
+    //     // btn.style.backgroundColor ='blue';
+    //     document.body.style.backgroundColor = 'blue';
+    // })
+
+    // Mouse Event
+        let para = document.getElementById('para');
+
+    para.addEventListener('mouseover',()=>{
+        para.style.backgroundColor = 'green';
+        para.style.fontSize = '2em';
+    })
+
+    para.addEventListener('mouseout',()=>{
+        para.style.backgroundColor = 'white';
+        para.style.fontSize = '1em';
+        para.style.color='red';
+    })
+</script>
+</html>

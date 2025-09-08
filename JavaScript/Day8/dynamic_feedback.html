@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback Form</title>
+  <style>
+    body {
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 320px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .stars {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .star {
+      color: gray;
+      transition: transform 0.2s;
+    }
+
+    .star:hover {
+      transform: scale(1.2);
+    }
+
+    .filled {
+      color: gold;
+    }
+
+    #emoji {
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    #feedback {
+      display: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="">
+      <div class="form-container">
+        <h2>Feedback Form</h2>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+
+        <div class="stars" id="star-container">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star" >★</span>
+        </div>
+
+        <div id="emoji">😐</div>
+
+        <textarea id="feedback" placeholder="Tell us what went wrong..."></textarea>
+
+        <button type="submit">Submit</button>
+      </div>
+  </form>
+
+  
+
+  <script>
+    const stars = document.querySelectorAll(".star");
+    const emoji = document.getElementById("emoji");
+    const feedback = document.getElementById("feedback");
+
+
+
+    const emojis = ["😡", "😟", "😐", "😊", "😍"];
+
+    stars.forEach((star, index) => {
+      star.addEventListener("click", () => {
+        const rating = index + 1;
+
+        // Update star styles
+        stars.forEach((s, i) => {
+
+              if(i<rating)
+              {
+                  s.classList.add("filled");
+              }
+              else{
+               
+                  s.classList.remove("filled");
+              
+              } 
+          
+        });
+
+        // Update emoji
+        emoji.textContent = emojis[rating - 1];
+
+        // Show textarea if rating ≤ 3
+        feedback.style.display = rating <= 3 ? "block" : "none";
+      });
+    });
+
+
+
+    
+
+
+ 
+  </script>
+
+</body>
+</html>
+

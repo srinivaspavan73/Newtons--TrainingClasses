@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="keywords" content="portfolio, web development">
+    <meta name="description" content="A mini static portfolio site showcasing projects and skills "> 
+    <meta name="author" content="Your Name"> 
+    <meta http-equiv="refresh" content="5"> 
+    <meta name="robots" content="index, follow"> 
+
+    <title>Mini Portfolio (HTML Only)</title>
+    <title>https://meet.google.com/rva-jdvp-nvh</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm a passionate web developer eager to learn and create engaging digital experiences. 
+                This mini portfolio showcases some fundamental HTML5 features.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>My Projects</h2>
+
+            <!-- Project 1: Canvas Example -->
+            <div>
+                <h3>Project 1: Canvas Drawing</h3>
+                <p>This example uses the HTML5 &lt;canvas&gt; element. Without JavaScript, it will appear as an empty box.</p>
+                <canvas id="myCanvas" width="400" height="200" style="border:1px solid #000000;"></canvas>
+            </div>
+
+            <!-- Project 2: Video Example -->
+            <div>
+                <h3>Project 2: Video Showcase</h3>
+                <p>This demonstrates the HTML5 &lt;video&gt; element.</p>
+                <video controls width="320" height="240">
+                    <source src="Ed Sheeran - Perfect (Official Music Video).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Project 3: Audio Example -->
+            <div>
+                <h3>Project 3: Audio Clip</h3>
+                <p>This uses the HTML5 &lt;audio&gt; element.</p>
+                <audio controls>
+                    <source src="Perfect.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="#" method="POST">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" placeholder="you@example.com" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea rows="5" placeholder="Your message here..." required></textarea>
+                </div>
+                <div>
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

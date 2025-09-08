@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* Box Model Concept: Margin, Border, Padding */
+        .box-model {
+            width: 300px;
+            padding: 20px;
+            margin: 20px;
+            border: 5px solid #333;
+            background-color: #e7e7e7;
+        }
+
+        /* Typography */
+        .typography-example {
+            font-size: 1.2em;
+            color: #444;
+            text-align: center;
+        }
+
+        /* CSS Selectors: Classes and IDs */
+        .blue-box {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        #unique-box {
+            background-color: #28a745;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* Flexbox Layout */
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .flex-item {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 20px;
+            margin: 10px;
+            width: 100px;
+            text-align: center;
+        }
+
+        /* CSS Positioning */
+        .relative-box {
+            position: relative;
+            background-color: #ffeb3b;
+            padding: 20px;
+            width: 250px;
+            height: 150px;
+            margin: 20px;
+        }
+
+        .absolute-box {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            background-color: #ff5722;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Hover Effects */
+        .hover-effect:hover {
+            background-color: #6c757d;
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .flex-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .flex-item {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Basics</h1>
+
+    <section>
+        <h2>Box Model</h2>
+        <div class="box-model">
+            This is an example of the box model (padding, border, margin).
+        </div>
+    </section>
+
+    <section>
+        <h2>Typography</h2>
+        <p class="typography-example">This is an example of CSS typography with line height, text color, and font size.</p>
+    </section>
+
+    <section>
+        <h2>Selectors: Class and ID</h2>
+        <div class="blue-box">This is a class-based blue box.</div>
+        <div id="unique-box">This is an ID-based green box.</div>
+    </section>
+
+    <section>
+        <h2>Flexbox Layout</h2>
+        <div class="flex-container">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Positioning</h2>
+        <div class="relative-box">
+            This is a relative box.
+            <div class="absolute-box">This is an absolute box inside the relative box.</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Hover Effects</h2>
+        <div class="hover-effect">
+            Hover over this box to change its background color.
+        </div>
+    </section>
+
+</body>
+</html>

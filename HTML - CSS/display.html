@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Display Property Example</title>
+  <style>
+    .block-example {
+      display: block;
+      background-color: lightblue;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .inline-example {
+      /* display: inline; */
+      background-color: lightgreen;
+      padding: 10px;
+    }
+
+    .inline-block-example {
+      display: inline-block;
+      background-color: lightcoral;
+      padding: 10px;
+      margin: 5px;
+      width: 100px;
+    }
+
+    .none-example {
+      display: none;
+    }
+
+    .flex-container {
+      display: flex;
+      gap: 10px;
+      background-color: #eee;
+      padding: 10px;
+    }
+    
+
+    .flex-item {
+      background-color: #ccc;
+      padding: 10px;
+      height: 300px;
+      flex: 1;
+      text-align: center;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      background-color: #f5f5f5;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .grid-item {
+      background-color: #bbb;
+      padding: 10px;
+      text-align: center;
+      height: 200px;
+      color: tomato;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Display: block</h2>
+  <div class="block-example">I am block
+    <!-- <h1>haii</h1> -->
+  </div>
+
+  <h2>Display: inline</h2>
+  <span class="inline-example">Inline 1</span>
+  <span class="inline-example">Inline 2</span>
+
+  <h2>Display: inline-block</h2>  
+  <div class="inline-block-example">Box 1</div>
+  <div class="inline-block-example">Box 2</div>
+
+  <h2>Display: none</h2>
+  <div class="none-example">You can't see me!</div>
+
+  <h2>Display: flex</h2>
+  <div class="flex-container">
+    <div class="flex-item">Flex 1</div>
+    <div class="flex-item">Flex 2</div>
+    <div class="flex-item">Flex 3</div>
+  </div>
+
+  <h2>Display: grid</h2>
+  <div class="grid-container">
+    <div class="grid-item">Grid 1</div>
+    <div class="grid-item">Grid 2</div>
+    <div class="grid-item">Grid 3</div>
+    <div class="grid-item">Grid 4</div>
+    <div class="grid-item">Grid 5</div>
+    <div class="grid-item">Grid 6</div>
+  </div>
+
+</body>
+</html>

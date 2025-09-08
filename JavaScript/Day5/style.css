@@ -1,0 +1,17 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid green;
+    width: 60%;
+    height: 400px;
+    margin-bottom: 10px;
+}

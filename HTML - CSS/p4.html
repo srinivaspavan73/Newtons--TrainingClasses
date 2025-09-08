@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header with animations */
+        header {
+            text-align: center;
+            padding: 60px 0;
+            background: white;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        /* Profile image with hover animation */
+        .profile-img-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #4e54c8;
+            box-shadow: 0 8px 25px rgba(78, 84, 200, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .profile-img-container:hover {
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 12px 35px rgba(78, 84, 200, 0.4);
+            border-color: #8f94fb;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img-container:hover .profile-img {
+            transform: scale(1.1);
+        }
+
+        /* Name animation */
+        .name {
+            font-size: 3rem;
+            color: #4e54c8;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #4e54c8, #8f94fb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: slideInFromLeft 1s ease-out 0.5s both;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 20px;
+            animation: slideInFromRight 1s ease-out 0.8s both;
+        }
+
+        /* Sections with animations */
+        section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.2s; }
+        section:nth-child(2) { animation-delay: 0.4s; }
+        section:nth-child(3) { animation-delay: 0.6s; }
+        section:nth-child(4) { animation-delay: 0.8s; }
+
+        h2 {
+            color: #4e54c8;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #8f94fb;
+            padding-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: linear-gradient(135deg, #8f94fb, #4e54c8);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(78, 84, 200, 0.3);
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .project {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #4e54c8;
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateX(5px);
+            background: #eef1ff;
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .contact-icon:hover {
+            transform: scale(1.2) rotate(10deg);
+            box-shadow: 0 8px 20px rgba(78, 84, 200, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            margin-top: 50px;
+            animation: fadeIn 1s ease-out 1s both;
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+            
+            .profile-img-container {
+                width: 150px;
+                height: 150px;
+            }
+            
+            section {
+                padding: 30px 20px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name {
+                font-size: 2rem;
+            }
+            
+            .contact-icons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-img-container">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/67a52848-a49f-4ef4-bee0-d68f2a7d6eaa.png" alt="Professional headshot of a web developer smiling with a modern office background" class="profile-img">
+            </div>
+            <h1 class="name">Bitra Pavan Kumar</h1>
+            <p class="title">Frontend Developer & UI Designer</p>
+        </header>
+
+        <section class="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm a passionate frontend developer with a love for creating beautiful, user-friendly websites. I enjoy turning complex problems into simple, beautiful designs.</p>
+            <p>When I'm not coding, you can find me hiking in the mountains, reading tech blogs, or experimenting with new design tools.</p>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill">HTML5</div>
+                <div class="skill">CSS3</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">React</div>
+                <div class="skill">UI/UX Design</div>
+                <div class="skill">Responsive Design</div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>E-commerce Website</h3>
+                    <p>A fully responsive online store built with modern web technologies.</p>
+                </div>
+                <div class="project">
+                    <h3>Weather App</h3>
+                    <p>Real-time weather application with beautiful animations.</p>
+                </div>
+                <div class="project">
+                    <h3>Portfolio Template</h3>
+                    <p>Customizable portfolio template for developers and designers.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>Contact Me</h2>
+            <p>Ready to start your next project? Let's connect!</p>
+            <div class="contact-icons">
+                <a href="#" class="contact-icon">Email</a>
+                <a href="#" class="contact-icon">LinkedIn</a>
+                <a href="#" class="contact-icon">GitHub</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2024 Bitra Pavan Kumar. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
+

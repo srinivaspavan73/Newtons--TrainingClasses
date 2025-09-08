@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Pseudo-Classes and Pseudo-Elements</title>
+  <style>
+    a:link {
+      color: goldenrod;
+      text-decoration: none;
+    }
+    a:visited {
+      color: pink;
+    }
+    a:hover {
+      color: red;
+      text-decoration: underline;
+    }
+    button:active {
+      background-color: green;
+    }
+    input:focus {
+      border: 2px solid blue;
+      outline: none;
+    }
+
+
+    li:first-child {
+      font-weight: bold;
+      font-style: italic;
+      color: blue;
+      background-color: lightgray;
+    }
+    li:nth-child(1) {
+      color: maroon;
+      background-color: blue;
+    }
+
+    li:last-child {
+      color:red;
+
+    }
+
+    li:hover {
+      background-color: lightblue;
+    }
+
+    /* === PSEUDO-ELEMENTS === */
+
+    h1::before {
+      content: "👉 ";
+    }
+    h1::after {
+      content: " 🎉";
+      color: green;
+    }
+    p::first-letter {
+      font-size: 200%;
+      color: purple;
+    }
+    p::first-line {
+      font-style: italic;
+      color: darkblue;
+    }
+
+    p::selection {
+      background: navy;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="https://example.com" target="_blank">Visit Example.com</a><br>
+  <a href="https://openai.com">Visit OpenAI</a>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+  </ul>
+
+  <p>Hello myself Pavan Kumar Bitra, Aspiring data and software professional with expertise in Python, SQL, Power BI, and machine learning. Passionate about
+ creating impactful solutions through data-driven insights and innovative front-end development.</p>
+
+  <input type="text" placeholder="Focus on me">
+  <br><br>
+  <button>click meeee</button>
+
+  <h1>haiii</h1>
+ 
+</body>
+</html>

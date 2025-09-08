@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Data Types</title>
+</head>
+<body>
+  <h1>JavaScript Data Types Example</h1>
+  <div id="output"></div>
+
+  <script>
+    // Different data types in JavaScript
+
+    let myString = "Hello, world!";          // String
+    let myNumber = 42;                       // Number
+    let myFloat = 3.14;                      // Number (floating point)
+    let myBoolean = true;                    // Boolean
+    let myUndefined;                         // Undefined
+    let myNull = null;                       // Null
+    let myObject = { name: "Alice", age: 25 };  // Object
+    let myArray = [1, 2, 3, 4, 5]; 
+              // Array (also an object)
+    
+    // Output area
+    let outputDiv = document.getElementById("output");
+
+    // Display data types and values
+    function display(varName, value) {
+      let type = typeof value;
+      let line = `<p><strong>${varName}</strong> = ${JSON.stringify(value)} <br> Type: <em>${type}</em></p>`;
+      outputDiv.innerHTML += line;
+      console.log(`${varName} =`, value, "| Type:", type);
+    }
+
+    // Call display for each variable
+    display("myString", myString);
+    display("myNumber", myNumber);
+    display("myFloat", myFloat);
+    display("myBoolean", myBoolean);
+    display("myUndefined", myUndefined);
+    display("myNull", myNull);
+    display("myObject", myObject);
+    display("myArray", myArray);
+  </script>
+</body>
+</html>

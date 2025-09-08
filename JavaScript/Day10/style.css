@@ -1,0 +1,132 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.app-container {
+    max-width: 600px;
+    margin: auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    text-align: center;
+    color: #4a90e2;
+}
+
+/* Form Styling */
+.form-container {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.required {
+    color: red;
+}
+
+input[type="text"],
+input[type="datetime-local"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #357abd;
+}
+
+/* Events List Styling */
+#events-list {
+    display: flex;
+    flex-direction: column; /* Stack event cards vertically */
+    gap: 15px;
+}
+
+.event-card {
+    background: #fff;
+    border-left: 5px solid #4a90e2;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Category Colors */
+.event-card.category-Birthday { border-color: #f7a239; }
+.event-card.category-Meeting { border-color: #4a90e2; }
+.event-card.category-Holiday { border-color: #2ac5a3; }
+.event-card.category-Custom { border-color: #9013fe; }
+
+.event-card h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.event-description {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.countdown-timer {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.countdown-timer.ended {
+    color: #e74c3c;
+    font-size: 1.2em;
+}
+
+.event-footer {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    text-align: right; /* Pushes button to the right */
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}

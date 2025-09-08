@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mouse Event</title>
+</head>
+<body>
+    <div id="para">
+        <p>Thank You, Hope we guys had a great time together.
+            All the Best for your future endeavors.
+            Keep Learning, Keep Growing.
+        </p>
+    </div>
+</body>
+<script>
+    let para = document.getElementById('para');
+
+    para.addEventListener('mouseover',()=>{
+        para.style.backgroundColor = 'green';
+        para.style.fontSize = '2em';
+    })
+
+    para.addEventListener('mouseout',()=>{
+        para.style.backgroundColor = 'white';
+        para.style.fontSize = '1em';
+    })
+</script>
+</html>

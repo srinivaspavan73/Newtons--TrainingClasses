@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            font-weight: 300;
+        }
+
+        nav {
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #666;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-bottom: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .about-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .work-item {
+            text-align: center;
+        }
+
+        .work-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #f5f5f5;
+            margin-bottom: 20px;
+            transition: opacity 0.3s ease;
+        }
+
+        .work-item img:hover {
+            opacity: 0.8;
+        }
+
+        .work-title {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .work-desc {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .contact-info {
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bitra Pavan Kumar</h1>
+            <p class="subtitle">Visual Designer & Creative Developer</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-content">
+                <p>I'm a visual designer passionate about creating clean, functional, and meaningful digital experiences. With over 5 years of experience in design and development, I focus on minimalist aesthetics and user-centered solutions.</p>
+                <br>
+                <p>My work spans across branding, web design, and digital art, always striving for simplicity and elegance in every project.</p>
+            </div>
+        </section>
+
+        <section id="work">
+            <h2>Selected Work</h2>
+            <div class="work-grid">
+                <div class="work-item">
+                    <div style="width: 100%; height: 200px; background-color: #f0f0f0; margin-bottom: 20px;"></div>
+                    <h3 class="work-title">Brand Identity - Studio A</h3>
+                    <p class="work-desc">Complete visual identity for creative studio</p>
+                </div>
+                <div class="work-item">
+                    <div style="width: 100%; height: 200px; background-color: #f0f0f0; margin-bottom: 20px;"></div>
+                    <h3 class="work-title">Website - Tech Company</h3>
+                    <p class="work-desc">Minimal website design and development</p>
+                </div>
+                <div class="work-item">
+                    <div style="width: 100%; height: 200px; background-color: #f0f0f0; margin-bottom: 20px;"></div>
+                    <h3 class="work-title">App Interface - Mobile</h3>
+                    <p class="work-desc">Clean UI design for productivity app</p>
+                </div>
+                <div class="work-item">
+                    <div style="width: 100%; height: 200px; background-color: #f0f0f0; margin-bottom: 20px;"></div>
+                    <h3 class="work-title">Print Design - Magazine</h3>
+                    <p class="work-desc">Editorial design for lifestyle publication</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p>Let's work together on your next project</p>
+                <p><a href="mailto:bitra@example.com">bitra@example.com</a></p>
+                <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                <p><a href="#">LinkedIn</a> / <a href="#">Dribbble</a> / <a href="#">Instagram</a></p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Bitra Pavan Kumar. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

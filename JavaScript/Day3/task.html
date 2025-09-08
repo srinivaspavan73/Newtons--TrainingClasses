@@ -1,0 +1,28 @@
+<!-- write a class for students it has 
+ properties 
+ name,id,branch,attendance and 
+methods to 
+displayinfo,showattendance. -->
+
+<script>
+    class Student{
+        constructor(name,id,branch,attendance){
+            this.name = name;
+            this.id = id;
+            this.branch = branch;
+            this.attendance = attendance;
+        }
+
+        display_info(){
+            console.log(`${this.name} studying in ${this.branch} with ${this.id}`);
+        }
+
+        showattendance(){
+            console.log(`Attendance: ${this.attendance}`);
+        }
+    }
+
+    const std1 = new Student('teja',12,'DS',75);
+    std1.display_info();
+    std1.showattendance();
+</script>

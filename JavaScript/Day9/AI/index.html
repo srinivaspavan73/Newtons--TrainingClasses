@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Task Manager</h1>
+        
+        <div class="task-form">
+            <h2 id="form-title">Add New Task</h2>
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="taskTitle">Task Title:</label>
+                    <input type="text" id="taskTitle" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="taskDescription">Description:</label>
+                    <textarea id="taskDescription" placeholder="Enter task description..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="taskStatus">Status:</label>
+                    <select id="taskStatus">
+                        <option value="pending">Pending</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn" id="submitBtn">Add Task</button>
+                <button type="button" class="btn btn-cancel" id="cancelBtn" style="display: none;">Cancel</button>
+            </form>
+        </div>
+        
+        <div class="task-list">
+            <h2>Your Tasks</h2>
+            <div id="taskContainer"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
